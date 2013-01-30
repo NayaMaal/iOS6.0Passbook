@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="class-PassKit.php" hash="663324dc8dc901547f135561dd84f2b9" package="PassKitSDK">
+    <docblock line="2">
+      <description>PassKit.php</description>
+      <long-description></long-description>
+      <tag line="2" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+      <tag line="2" name="copyright" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+      <tag line="2" name="license" description="http://www.opensource.org/licenses/gpl-license.php"/>
+      <tag line="2" name="package" description="PassKitSDK"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="21" package="PassKitSDK">
+      <extends/>
+      <name>PassKit</name>
+      <full_name>\PassKit</full_name>
+      <docblock line="11">
+        <description>PassKit</description>
+        <long-description>&lt;p&gt;PassKit class for validating passes, adding value
+deducting value and redeeming passes.&lt;/p&gt;</long-description>
+        <tag line="11" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+        <tag line="11" name="package" description="PassKitSDK"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="31" namespace="global" package="Default">
+        <name>$api_url</name>
+        <default>"https://api.passkit.com/v1/"</default>
+        <docblock line="24">
+          <description>$api_url</description>
+          <long-description></long-description>
+          <tag line="24" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="24" name="category" description="Initiate"/>
+          <tag line="24" name="var" description="URL to PassKit API, includes version" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="40" namespace="global" package="Default">
+        <name>$account</name>
+        <default>""</default>
+        <docblock line="33">
+          <description>$account</description>
+          <long-description></long-description>
+          <tag line="33" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="33" name="category" description="Initiate"/>
+          <tag line="33" name="var" description="PassKit Account ID, Set with: __construct()" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="49" namespace="global" package="Default">
+        <name>$secret</name>
+        <default>""</default>
+        <docblock line="42">
+          <description>$secret</description>
+          <long-description></long-description>
+          <tag line="42" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="42" name="category" description="Initiate"/>
+          <tag line="42" name="var" description="PassKit Account Secret, Set with: __construct()" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="58" namespace="global" package="Default">
+        <name>$debug</name>
+        <default>false</default>
+        <docblock line="51">
+          <description>$debug</description>
+          <long-description></long-description>
+          <tag line="51" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="51" name="category" description="Initiate"/>
+          <tag line="51" name="var" description="Debug enabled or not, Set with: __construct()" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="68" namespace="global" package="Default">
+        <name>$pass_id</name>
+        <default>""</default>
+        <docblock line="61">
+          <description>$pass_id</description>
+          <long-description></long-description>
+          <tag line="61" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="61" name="category" description="Initiate"/>
+          <tag line="61" name="var" description="Pass ID we will work with, Set with: set_pass_id()" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="77" namespace="global" package="Default">
+        <name>$pass_details</name>
+        <default>array()</default>
+        <docblock line="70">
+          <description>$pass_details</description>
+          <long-description></long-description>
+          <tag line="70" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="70" name="category" description="Pass Interaction"/>
+          <tag line="70" name="var" description="Details for the currently validated pass, Set with: pass_details()" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="86" namespace="global" package="Default">
+        <name>$pk_result</name>
+        <default>NULL</default>
+        <docblock line="79">
+          <description>$pk_result</description>
+          <long-description></long-description>
+          <tag line="79" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="79" name="category" description="Pass Interaction"/>
+          <tag line="79" name="var" description="JSON result for a passkit query, Set with pk_query()" type="Object">
+            <type by_reference="false">Object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="95" namespace="global" package="Default">
+        <name>$pk_error_result</name>
+        <default>""</default>
+        <docblock line="88">
+          <description>$pk_error_result</description>
+          <long-description></long-description>
+          <tag line="88" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="88" name="category" description="Pass Interaction"/>
+          <tag line="88" name="var" description="JSON error result for a passkit query, Set with pk_query();" type="Object">
+            <type by_reference="false">Object</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="121" package="PassKitSDK">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="105">
+          <description>__construct</description>
+          <long-description>&lt;p&gt;Initial setup, needs passkit account key and secret
+will return fail if either is empty. Optional debug
+variable can also be set which will cause errors to be
+printed on-screen.&lt;/p&gt;</long-description>
+          <tag line="105" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="105" name="category" description="Initiate"/>
+          <tag line="105" name="access" description="public"/>
+          <tag line="105" name="param" description="PassKit Account ID (required)" type="String" variable="$account">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="105" name="param" description="PassKit Account Secret (required)" type="String" variable="$secret">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="105" name="param" description="Debug enabled or not (default: false)" type="Boolean" variable="$debug">
+            <type by_reference="false">Boolean</type>
+          </tag>
+          <tag line="105" name="return" description="True on successful connection" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="121">
+          <name>$account</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$secret</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$debug</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="171" package="PassKitSDK">
+        <name>pk_query</name>
+        <full_name>pk_query</full_name>
+        <docblock line="157">
+          <description>PassKit Query</description>
+          <long-description>&lt;p&gt;The cURL query function to PassKit. Handles all generic parts
+of this activity and can be called from action specific functions
+that provide specific requests.&lt;/p&gt;</long-description>
+          <tag line="157" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="157" name="category" description="PassKit Communication"/>
+          <tag line="157" name="access" description="private"/>
+          <tag line="157" name="param" description="URL path to use for query" type="String" variable="$path">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="157" name="param" description="Additional post parameters to send with the query, optional" type="Array" variable="$post">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="157" name="return" description="True on successful connection" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="171">
+          <name>$path</name>
+          <default>''</default>
+          <type/>
+        </argument>
+        <argument line="171">
+          <name>$post</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="233" package="PassKitSDK">
+        <name>pk_test_connection</name>
+        <full_name>pk_test_connection</full_name>
+        <docblock line="223">
+          <description>Connection test</description>
+          <long-description>&lt;p&gt;Test PassKit connection and authentication&lt;/p&gt;</long-description>
+          <tag line="223" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="223" name="category" description="PassKit Communication"/>
+          <tag line="223" name="access" description="public"/>
+          <tag line="223" name="return" description="True on successful authentication" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="252" package="PassKitSDK">
+        <name>pk_image_upload</name>
+        <full_name>pk_image_upload</full_name>
+        <docblock line="239">
+          <description>Image Upload</description>
+          <long-description>&lt;p&gt;Upload an image to PassKit where it can used for passes&lt;/p&gt;</long-description>
+          <tag line="239" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="239" name="category" description="PassKit Communication"/>
+          <tag line="239" name="access" description="public"/>
+          <tag line="239" name="param" description="Which role should the image be optimised for. Valid values are 'icon', 'strip', 'logo', 'thumbnail', 'background' and 'footer'." type="String" variable="$role">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="239" name="param" description="Local path to file" type="String" variable="$filename">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="239" name="return" description="The Image ID of the newly uploaded image which can be used to update a pass" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+        <argument line="252">
+          <name>$role</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="252">
+          <name>$filename</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="368" package="PassKitSDK">
+        <name>pk_issue_pass</name>
+        <full_name>pk_issue_pass</full_name>
+        <docblock line="354">
+          <description>Issue Pass</description>
+          <long-description>&lt;p&gt;Issue a new Passbook Pass&lt;/p&gt;</long-description>
+          <tag line="354" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="354" name="category" description="PassKit Communication"/>
+          <tag line="354" name="access" description="public"/>
+          <tag line="354" name="param" description="Name of the template to generate a pass for" type="String" variable="$template">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="354" name="param" description="Associated array of field names and values for dynamic fields" type="Array" variable="$params">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="354" name="param" description="redirect user to the pass in-browser once created" type="Boolean" variable="$redirect">
+            <type by_reference="false">Boolean</type>
+          </tag>
+          <tag line="354" name="return" description="object containing the URL, serial and Passbook serial of the issued pass, or error message on failure" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="368">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="368">
+          <name>$params</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="368">
+          <name>$redirect</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="411" package="PassKitSDK">
+        <name>set_pass_id</name>
+        <full_name>set_pass_id</full_name>
+        <docblock line="399">
+          <description>Set pass ID</description>
+          <long-description>&lt;p&gt;Call this function with the Pass ID. It will be santized
+and stored as a property. If it is empty it will return an error.&lt;/p&gt;</long-description>
+          <tag line="399" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="399" name="category" description="Validation and Retrieval"/>
+          <tag line="399" name="access" description="public"/>
+          <tag line="399" name="param" description="Pass code as scanned from barcode (required)" type="String" variable="$pass_id">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="399" name="return" description="" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="411">
+          <name>$pass_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="451" package="PassKitSDK">
+        <name>set_pass_serial</name>
+        <full_name>set_pass_serial</full_name>
+        <docblock line="435">
+          <description>Set pass ID via serial</description>
+          <long-description>&lt;p&gt;Call this function with the params Pass Serial and Template Name.
+Using these it will query PassKit for the Pass ID and feed that
+into the set_pass_id function.&lt;/p&gt;
+
+&lt;p&gt;set the Pass Serial and call set_pass_id()&lt;/p&gt;</long-description>
+          <tag line="435" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="435" name="category" description="Validation and Retrieval"/>
+          <tag line="435" name="access" description="public"/>
+          <tag line="435" name="param" description="Pass serial (required)" type="String" variable="$serial">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="435" name="param" description="Pass template (required)" type="String" variable="$template">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="435" name="return" description="" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="451">
+          <name>$serial</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="451">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="498" package="PassKitSDK">
+        <name>pass_validate</name>
+        <full_name>pass_validate</full_name>
+        <docblock line="488">
+          <description>Validate Pass</description>
+          <long-description>&lt;p&gt;Validate the set Pass ID with PassKit&lt;/p&gt;</long-description>
+          <tag line="488" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="488" name="category" description="Validation and Retrieval"/>
+          <tag line="488" name="access" description="public"/>
+          <tag line="488" name="return" description="True on successful validation" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="559" package="PassKitSDK">
+        <name>get_pass_details</name>
+        <full_name>get_pass_details</full_name>
+        <docblock line="548">
+          <description>Get Pass Details</description>
+          <long-description>&lt;p&gt;Return the pass details array. This can be used for storing a local
+copy of the details for example or for customized processing.&lt;/p&gt;</long-description>
+          <tag line="548" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="548" name="category" description="Validation and Retrieval"/>
+          <tag line="548" name="access" description="public"/>
+          <tag line="548" name="return" description="pass details" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="585" package="PassKitSDK">
+        <name>get_templates</name>
+        <full_name>get_templates</full_name>
+        <docblock line="575">
+          <description>Get template names</description>
+          <long-description>&lt;p&gt;Return all PassKit template names for this account.&lt;/p&gt;</long-description>
+          <tag line="575" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="575" name="category" description="Validation and Retrieval"/>
+          <tag line="575" name="access" description="public"/>
+          <tag line="575" name="return" description="template names" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="613" package="PassKitSDK">
+        <name>get_template_details</name>
+        <full_name>get_template_details</full_name>
+        <docblock line="601">
+          <description>Get template details</description>
+          <long-description>&lt;p&gt;Return the template details, static and dynamic with default values.
+Developer added "data-" entries are excluded.&lt;/p&gt;</long-description>
+          <tag line="601" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="601" name="category" description="Validation and Retrieval"/>
+          <tag line="601" name="access" description="public"/>
+          <tag line="601" name="param" description="name of the template to retrieve details for" type="String" variable="$template">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="601" name="return" description="pass details" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+        <argument line="613">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="706" package="PassKitSDK">
+        <name>get_dynamic_template_fields</name>
+        <full_name>get_dynamic_template_fields</full_name>
+        <docblock line="694">
+          <description>Get dynamic template fields</description>
+          <long-description>&lt;p&gt;Return the template fields, with data types and default values.
+Developer added "data-" entries are excluded.&lt;/p&gt;</long-description>
+          <tag line="694" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="694" name="category" description="Validation and Retrieval"/>
+          <tag line="694" name="access" description="public"/>
+          <tag line="694" name="param" description="name of the template to retrieve details for" type="String" variable="$template">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="694" name="return" description="pass details" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+        <argument line="706">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="749" package="PassKitSDK">
+        <name>template_update</name>
+        <full_name>template_update</full_name>
+        <docblock line="735">
+          <description>Update a template</description>
+          <long-description>&lt;p&gt;Update a template causing all issues passes for the template
+to also be updated. Can be used max every 10 minutes.&lt;/p&gt;</long-description>
+          <tag line="735" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="735" name="category" description="Pass Interaction"/>
+          <tag line="735" name="access" description="private"/>
+          <tag line="735" name="param" description="Name of the template to update" type="String" variable="$template">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="735" name="param" description="The field names with value to update" type="Array" variable="$fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="735" name="param" description="Push to devices or not, default yes" type="Boolean" variable="$push">
+            <type by_reference="false">Boolean</type>
+          </tag>
+          <tag line="735" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="749">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="749">
+          <name>$fields</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="749">
+          <name>$push</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="783" package="PassKitSDK">
+        <name>pass_update</name>
+        <full_name>pass_update</full_name>
+        <docblock line="765">
+          <description>Update a pass</description>
+          <long-description>&lt;p&gt;Update or add dynamic fields for the current pass. The URL path
+is the same for most update actions and the fields to change can
+be passed as a parameter array. Note that adding new fields is
+the same as updating existing fields. Added fields will not
+be visible by the user. Specific frequently used actions are
+available below as their own functions. They will call this
+generic update function with specific instructions.&lt;/p&gt;</long-description>
+          <tag line="765" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="765" name="category" description="Pass Interaction"/>
+          <tag line="765" name="access" description="private"/>
+          <tag line="765" name="param" description="The field names with value to update" type="Array" variable="$fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="765" name="param" description="Push to devices or not, default yes" type="Boolean" variable="$push">
+            <type by_reference="false">Boolean</type>
+          </tag>
+          <tag line="765" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="783">
+          <name>$fields</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="783">
+          <name>$push</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="822" package="PassKitSDK">
+        <name>pass_redeem</name>
+        <full_name>pass_redeem</full_name>
+        <docblock line="808">
+          <description>Redeem Pass</description>
+          <long-description>&lt;p&gt;Redeem the pass with PassKit by setting the data-status variable in the
+passData section. This allows us to "redeem" the pass without nuking it.
+additional fields to update can be passed to this function. For example
+to replace an "expire" label and date with a "redeemed" label and date.&lt;/p&gt;</long-description>
+          <tag line="808" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="808" name="category" description="Pass Interaction"/>
+          <tag line="808" name="access" description="public"/>
+          <tag line="808" name="param" description="Associated array of filed name =&gt; value pairs to post with the redeem action" type="Array" variable="$post_fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="808" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="822">
+          <name>$post_fields</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="860" package="PassKitSDK">
+        <name>pass_reactivate</name>
+        <full_name>pass_reactivate</full_name>
+        <docblock line="846">
+          <description>Reactivate Pass</description>
+          <long-description>&lt;p&gt;Make a pass available again for redemption by setting the data-status
+variable in the passData section to "Available". Additional fields can also
+be passed to the function for resetting the pass to its original template for example.&lt;/p&gt;</long-description>
+          <tag line="846" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="846" name="category" description="Pass Interaction"/>
+          <tag line="846" name="access" description="public"/>
+          <tag line="846" name="param" description="Associated array of filed name =&gt; value pairs to post with the reactivate action" type="Array" variable="$post_fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="846" name="param" description="If true, an update will be pushed to the pass" type="Boolean" variable="$push">
+            <type by_reference="false">Boolean</type>
+          </tag>
+          <tag line="846" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="860">
+          <name>$post_fields</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="860">
+          <name>$push</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="895" package="PassKitSDK">
+        <name>pass_invalidate</name>
+        <full_name>pass_invalidate</full_name>
+        <docblock line="884">
+          <description>Invalidate (Nuke) pass</description>
+          <long-description>&lt;p&gt;Completely nuke a pass making it no longer usable&lt;/p&gt;</long-description>
+          <tag line="884" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="884" name="category" description="Pass Interaction"/>
+          <tag line="884" name="access" description="public"/>
+          <tag line="884" name="param" description="additional fields to post with the invalidate action" type="Array" variable="$post_fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="884" name="return" description="True on successful invalidation" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="895">
+          <name>$post_fields</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="937" package="PassKitSDK">
+        <name>pass_add_field</name>
+        <full_name>pass_add_field</full_name>
+        <docblock line="924">
+          <description>Add Field to Pass</description>
+          <long-description>&lt;p&gt;Add a single new variable to a pass. These are data fields and not visible
+to the user.&lt;/p&gt;</long-description>
+          <tag line="924" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="924" name="category" description="Pass Interaction"/>
+          <tag line="924" name="access" description="public"/>
+          <tag line="924" name="param" description="The name of the variable to add" type="String" variable="$label">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="924" name="param" description="The value of the variable to add" type="String" variable="$value">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="924" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="937">
+          <name>$label</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="937">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="964" package="PassKitSDK">
+        <name>pass_add_fields</name>
+        <full_name>pass_add_fields</full_name>
+        <docblock line="952">
+          <description>Add Fields to Pass</description>
+          <long-description>&lt;p&gt;Add multiple variables to a pass. These are data fields and not visible
+to the user.&lt;/p&gt;</long-description>
+          <tag line="952" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="952" name="category" description="Pass Interaction"/>
+          <tag line="952" name="access" description="public"/>
+          <tag line="952" name="param" description="Array of key=&gt;value to be added" type="Array" variable="$fields">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="952" name="return" description="True on success" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="964">
+          <name>$fields</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="999" package="PassKitSDK">
+        <name>sanitize</name>
+        <full_name>sanitize</full_name>
+        <docblock line="988">
+          <description>Sanitize String</description>
+          <long-description>&lt;p&gt;Strips non alpha-numerics from given string. / and . are also allowed.&lt;/p&gt;</long-description>
+          <tag line="988" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="988" name="category" description="Helper Functions"/>
+          <tag line="988" name="access" description="private"/>
+          <tag line="988" name="param" description="Variable to sanitize" type="String" variable="$var">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="988" name="return" description="Sanitized variable" type="String">
+            <type by_reference="false">String</type>
+          </tag>
+        </docblock>
+        <argument line="999">
+          <name>$var</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="1017" package="PassKitSDK">
+        <name>object2array</name>
+        <full_name>object2array</full_name>
+        <docblock line="1006">
+          <description>Object to Array conversion</description>
+          <long-description>&lt;p&gt;Converts an object to an array for easier and consistant access&lt;/p&gt;</long-description>
+          <tag line="1006" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="1006" name="category" description="Helper Functions"/>
+          <tag line="1006" name="access" description="private"/>
+          <tag line="1006" name="param" description="Object to convert" type="Object" variable="$object">
+            <type by_reference="false">Object</type>
+          </tag>
+          <tag line="1006" name="return" description="" type="Array">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+        <argument line="1017">
+          <name>$object</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="1036" package="PassKitSDK">
+        <name>error</name>
+        <full_name>error</full_name>
+        <docblock line="1023">
+          <description>Output Error</description>
+          <long-description>&lt;p&gt;Error reporting function that will output a styled debug of the
+class variable "debug" is enabled.&lt;/p&gt;</long-description>
+          <tag line="1023" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="1023" name="category" description="Helper Functions"/>
+          <tag line="1023" name="access" description="public"/>
+          <tag line="1023" name="param" description="Error Message to display" type="String" variable="$error">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1023" name="param" description="The backtrace from point of error" type="Array" variable="$backtrace">
+            <type by_reference="false">Array</type>
+          </tag>
+          <tag line="1023" name="return" description="" type="false">
+            <type by_reference="false">false</type>
+          </tag>
+        </docblock>
+        <argument line="1036">
+          <name>$error</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1036">
+          <name>$backtrace</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1061" package="PassKitSDK">
+        <name>detect_passbook</name>
+        <full_name>detect_passbook</full_name>
+        <docblock line="1047">
+          <description>Detect Passbook capable browsers</description>
+          <long-description>&lt;p&gt;Sniffs the browser useragent string to determine if the browser can process .pkpass files.
+Note that this funciton will need maintaining as browser compatibility evolves.&lt;/p&gt;</long-description>
+          <tag line="1047" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="1047" name="category" description="Helper Functions"/>
+          <tag line="1047" name="access" description="private"/>
+          <tag line="1047" name="param" description="User agent string to check, if null the SERVER var will be used" type="String" variable="$agent_string">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1047" name="param" description="Maximum major version number to consider for Safari on Apple" type="\Integar" variable="$ver">
+            <type by_reference="false">\Integar</type>
+          </tag>
+          <tag line="1047" name="param" description="Maximum minor version number to consider for Safari on Apple" type="\Integar" variable="$subver">
+            <type by_reference="false">\Integar</type>
+          </tag>
+          <tag line="1047" name="return" description="True if a Passbook capable browser is found" type="Boolean">
+            <type by_reference="false">Boolean</type>
+          </tag>
+        </docblock>
+        <argument line="1061">
+          <name>$agent_string</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="1061">
+          <name>$ver</name>
+          <default>9</default>
+          <type/>
+        </argument>
+        <argument line="1061">
+          <name>$subver</name>
+          <default>9</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1096" package="PassKitSDK">
+        <name>__destruct</name>
+        <full_name>__destruct</full_name>
+        <docblock line="1089">
+          <description>__destruct</description>
+          <long-description></long-description>
+          <tag line="1089" name="author" description="Thomas Smart &lt;dev*ThomasSmart*c0m&gt;"/>
+          <tag line="1089" name="access" description="public"/>
+          <tag line="1089" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="PassKitSDK" full_name="PassKitSDK"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

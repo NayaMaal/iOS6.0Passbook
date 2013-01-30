@@ -1,0 +1,1039 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \PassKit</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/PassKitSDK.html"><i class="icon-folder-open"></i> PassKitSDK</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: __construct"><span class="description">__construct</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: __destruct"><span class="description">__destruct</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_detect_passbook" title="detect_passbook :: Detect Passbook capable browsers"><span class="description">Detect Passbook capable browsers</span><pre>detect_passbook()</pre></a></li>
+<li class="method public "><a href="#method_get_dynamic_template_fields" title="get_dynamic_template_fields :: Get dynamic template fields"><span class="description">Get dynamic template fields</span><pre>get_dynamic_template_fields()</pre></a></li>
+<li class="method public "><a href="#method_get_pass_details" title="get_pass_details :: Get Pass Details"><span class="description">Get Pass Details</span><pre>get_pass_details()</pre></a></li>
+<li class="method public "><a href="#method_get_template_details" title="get_template_details :: Get template details"><span class="description">Get template details</span><pre>get_template_details()</pre></a></li>
+<li class="method public "><a href="#method_get_templates" title="get_templates :: Get template names"><span class="description">Get template names</span><pre>get_templates()</pre></a></li>
+<li class="method public "><a href="#method_pass_add_field" title="pass_add_field :: Add Field to Pass"><span class="description">Add Field to Pass</span><pre>pass_add_field()</pre></a></li>
+<li class="method public "><a href="#method_pass_add_fields" title="pass_add_fields :: Add Fields to Pass"><span class="description">Add Fields to Pass</span><pre>pass_add_fields()</pre></a></li>
+<li class="method public "><a href="#method_pass_invalidate" title="pass_invalidate :: Invalidate (Nuke) pass"><span class="description">Invalidate (Nuke) pass</span><pre>pass_invalidate()</pre></a></li>
+<li class="method public "><a href="#method_pass_reactivate" title="pass_reactivate :: Reactivate Pass"><span class="description">Reactivate Pass</span><pre>pass_reactivate()</pre></a></li>
+<li class="method public "><a href="#method_pass_redeem" title="pass_redeem :: Redeem Pass"><span class="description">Redeem Pass</span><pre>pass_redeem()</pre></a></li>
+<li class="method public "><a href="#method_pass_update" title="pass_update :: Update a pass"><span class="description">Update a pass</span><pre>pass_update()</pre></a></li>
+<li class="method public "><a href="#method_pass_validate" title="pass_validate :: Validate Pass"><span class="description">Validate Pass</span><pre>pass_validate()</pre></a></li>
+<li class="method public "><a href="#method_pk_image_upload" title="pk_image_upload :: Image Upload"><span class="description">Image Upload</span><pre>pk_image_upload()</pre></a></li>
+<li class="method public "><a href="#method_pk_issue_pass" title="pk_issue_pass :: Issue Pass"><span class="description">Issue Pass</span><pre>pk_issue_pass()</pre></a></li>
+<li class="method public "><a href="#method_pk_test_connection" title="pk_test_connection :: Connection test"><span class="description">Connection test</span><pre>pk_test_connection()</pre></a></li>
+<li class="method public "><a href="#method_set_pass_id" title="set_pass_id :: Set pass ID"><span class="description">Set pass ID</span><pre>set_pass_id()</pre></a></li>
+<li class="method public "><a href="#method_set_pass_serial" title="set_pass_serial :: Set pass ID via serial"><span class="description">Set pass ID via serial</span><pre>set_pass_serial()</pre></a></li>
+<li class="method public "><a href="#method_template_update" title="template_update :: Update a template"><span class="description">Update a template</span><pre>template_update()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_error" title="error :: Output Error"><span class="description">Output Error</span><pre>error()</pre></a></li>
+<li class="method private "><a href="#method_object2array" title="object2array :: Object to Array conversion"><span class="description">Object to Array conversion</span><pre>object2array()</pre></a></li>
+<li class="method private "><a href="#method_pk_query" title="pk_query :: PassKit Query"><span class="description">PassKit Query</span><pre>pk_query()</pre></a></li>
+<li class="method private "><a href="#method_sanitize" title="sanitize :: Sanitize String"><span class="description">Sanitize String</span><pre>sanitize()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_pk_error_result" title="$pk_error_result :: $pk_error_result"><span class="description"></span><pre>$pk_error_result</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_account" title="$account :: $account"><span class="description"></span><pre>$account</pre></a></li>
+<li class="property private "><a href="#property_api_url" title="$api_url :: $api_url"><span class="description"></span><pre>$api_url</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug :: $debug"><span class="description"></span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_pass_details" title="$pass_details :: $pass_details"><span class="description"></span><pre>$pass_details</pre></a></li>
+<li class="property private "><a href="#property_pass_id" title="$pass_id :: $pass_id"><span class="description"></span><pre>$pass_id</pre></a></li>
+<li class="property private "><a href="#property_pk_result" title="$pk_result :: $pk_result"><span class="description"></span><pre>$pk_result</pre></a></li>
+<li class="property private "><a href="#property_secret" title="$secret :: $secret"><span class="description"></span><pre>$secret</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\PassKit"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/PassKit.html">PassKit</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">PassKit</p>
+<div class="details">
+<div class="long_description"><p>PassKit class for validating passes, adding value
+deducting value and redeeming passes.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PassKitSDK.html">PassKitSDK</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>__construct</h2>
+<pre>__construct(String $account, String $secret, Boolean $debug) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Initial setup, needs passkit account key and secret
+will return fail if either is empty. Optional debug
+variable can also be set which will cause errors to be
+printed on-screen.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$account</h4>
+<code>String</code><p>PassKit Account ID (required)</p>
+</div>
+<div class="subelement argument">
+<h4>$secret</h4>
+<code>String</code><p>PassKit Account Secret (required)</p>
+</div>
+<div class="subelement argument">
+<h4>$debug</h4>
+<code>Boolean</code><p>Debug enabled or not (default: false)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on successful connection</div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>__destruct</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_detect_passbook"></a><div class="element clickable method public method_detect_passbook" data-toggle="collapse" data-target=".method_detect_passbook .collapse">
+<h2>Detect Passbook capable browsers</h2>
+<pre>detect_passbook(String $agent_string, \Integar $ver, \Integar $subver) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Sniffs the browser useragent string to determine if the browser can process .pkpass files.
+Note that this funciton will need maintaining as browser compatibility evolves.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Helper Functions</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$agent_string</h4>
+<code>String</code><p>User agent string to check, if null the SERVER var will be used</p></div>
+<div class="subelement argument">
+<h4>$ver</h4>
+<code>\Integar</code><p>Maximum major version number to consider for Safari on Apple</p></div>
+<div class="subelement argument">
+<h4>$subver</h4>
+<code>\Integar</code><p>Maximum minor version number to consider for Safari on Apple</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True if a Passbook capable browser is found</div>
+</div></div>
+</div>
+<a id="method_get_dynamic_template_fields"></a><div class="element clickable method public method_get_dynamic_template_fields" data-toggle="collapse" data-target=".method_get_dynamic_template_fields .collapse">
+<h2>Get dynamic template fields</h2>
+<pre>get_dynamic_template_fields(String $template) : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return the template fields, with data types and default values.
+Developer added "data-" entries are excluded.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>String</code><p>name of the template to retrieve details for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Array</code>pass details</div>
+</div></div>
+</div>
+<a id="method_get_pass_details"></a><div class="element clickable method public method_get_pass_details" data-toggle="collapse" data-target=".method_get_pass_details .collapse">
+<h2>Get Pass Details</h2>
+<pre>get_pass_details() : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return the pass details array. This can be used for storing a local
+copy of the details for example or for customized processing.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Array</code>pass details</div>
+</div></div>
+</div>
+<a id="method_get_template_details"></a><div class="element clickable method public method_get_template_details" data-toggle="collapse" data-target=".method_get_template_details .collapse">
+<h2>Get template details</h2>
+<pre>get_template_details(String $template) : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return the template details, static and dynamic with default values.
+Developer added "data-" entries are excluded.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>String</code><p>name of the template to retrieve details for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Array</code>pass details</div>
+</div></div>
+</div>
+<a id="method_get_templates"></a><div class="element clickable method public method_get_templates" data-toggle="collapse" data-target=".method_get_templates .collapse">
+<h2>Get template names</h2>
+<pre>get_templates() : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return all PassKit template names for this account.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Array</code>template names</div>
+</div></div>
+</div>
+<a id="method_pass_add_field"></a><div class="element clickable method public method_pass_add_field" data-toggle="collapse" data-target=".method_pass_add_field .collapse">
+<h2>Add Field to Pass</h2>
+<pre>pass_add_field(String $label, String $value) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Add a single new variable to a pass. These are data fields and not visible
+to the user.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>String</code><p>The name of the variable to add</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>String</code><p>The value of the variable to add</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_pass_add_fields"></a><div class="element clickable method public method_pass_add_fields" data-toggle="collapse" data-target=".method_pass_add_fields .collapse">
+<h2>Add Fields to Pass</h2>
+<pre>pass_add_fields(Array $fields) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Add multiple variables to a pass. These are data fields and not visible
+to the user.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>Array</code><p>Array of key=>value to be added</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_pass_invalidate"></a><div class="element clickable method public method_pass_invalidate" data-toggle="collapse" data-target=".method_pass_invalidate .collapse">
+<h2>Invalidate (Nuke) pass</h2>
+<pre>pass_invalidate(Array $post_fields) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Completely nuke a pass making it no longer usable</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_fields</h4>
+<code>Array</code><p>additional fields to post with the invalidate action</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on successful invalidation</div>
+</div></div>
+</div>
+<a id="method_pass_reactivate"></a><div class="element clickable method public method_pass_reactivate" data-toggle="collapse" data-target=".method_pass_reactivate .collapse">
+<h2>Reactivate Pass</h2>
+<pre>pass_reactivate(Array $post_fields, Boolean $push) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Make a pass available again for redemption by setting the data-status
+variable in the passData section to "Available". Additional fields can also
+be passed to the function for resetting the pass to its original template for example.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_fields</h4>
+<code>Array</code><p>Associated array of filed name => value pairs to post with the reactivate action</p>
+</div>
+<div class="subelement argument">
+<h4>$push</h4>
+<code>Boolean</code><p>If true, an update will be pushed to the pass</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_pass_redeem"></a><div class="element clickable method public method_pass_redeem" data-toggle="collapse" data-target=".method_pass_redeem .collapse">
+<h2>Redeem Pass</h2>
+<pre>pass_redeem(Array $post_fields) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Redeem the pass with PassKit by setting the data-status variable in the
+passData section. This allows us to "redeem" the pass without nuking it.
+additional fields to update can be passed to this function. For example
+to replace an "expire" label and date with a "redeemed" label and date.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_fields</h4>
+<code>Array</code><p>Associated array of filed name => value pairs to post with the redeem action</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_pass_update"></a><div class="element clickable method public method_pass_update" data-toggle="collapse" data-target=".method_pass_update .collapse">
+<h2>Update a pass</h2>
+<pre>pass_update(Array $fields, Boolean $push) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Update or add dynamic fields for the current pass. The URL path
+is the same for most update actions and the fields to change can
+be passed as a parameter array. Note that adding new fields is
+the same as updating existing fields. Added fields will not
+be visible by the user. Specific frequently used actions are
+available below as their own functions. They will call this
+generic update function with specific instructions.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>Array</code><p>The field names with value to update</p></div>
+<div class="subelement argument">
+<h4>$push</h4>
+<code>Boolean</code><p>Push to devices or not, default yes</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_pass_validate"></a><div class="element clickable method public method_pass_validate" data-toggle="collapse" data-target=".method_pass_validate .collapse">
+<h2>Validate Pass</h2>
+<pre>pass_validate() : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Validate the set Pass ID with PassKit</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on successful validation</div>
+</div></div>
+</div>
+<a id="method_pk_image_upload"></a><div class="element clickable method public method_pk_image_upload" data-toggle="collapse" data-target=".method_pk_image_upload .collapse">
+<h2>Image Upload</h2>
+<pre>pk_image_upload(String $role, String $filename) : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Upload an image to PassKit where it can used for passes</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>PassKit Communication</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$role</h4>
+<code>String</code><p>Which role should the image be optimised for. Valid values are 'icon', 'strip', 'logo', 'thumbnail', 'background' and 'footer'.</p>
+</div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>String</code><p>Local path to file</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>String</code>The Image ID of the newly uploaded image which can be used to update a pass</div>
+</div></div>
+</div>
+<a id="method_pk_issue_pass"></a><div class="element clickable method public method_pk_issue_pass" data-toggle="collapse" data-target=".method_pk_issue_pass .collapse">
+<h2>Issue Pass</h2>
+<pre>pk_issue_pass(String $template, Array $params, Boolean $redirect) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Issue a new Passbook Pass</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>PassKit Communication</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>String</code><p>Name of the template to generate a pass for</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>Array</code><p>Associated array of field names and values for dynamic fields</p></div>
+<div class="subelement argument">
+<h4>$redirect</h4>
+<code>Boolean</code><p>redirect user to the pass in-browser once created</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>object containing the URL, serial and Passbook serial of the issued pass, or error message on failure</div>
+</div></div>
+</div>
+<a id="method_pk_test_connection"></a><div class="element clickable method public method_pk_test_connection" data-toggle="collapse" data-target=".method_pk_test_connection .collapse">
+<h2>Connection test</h2>
+<pre>pk_test_connection() : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Test PassKit connection and authentication</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>PassKit Communication</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on successful authentication</div>
+</div></div>
+</div>
+<a id="method_set_pass_id"></a><div class="element clickable method public method_set_pass_id" data-toggle="collapse" data-target=".method_set_pass_id .collapse">
+<h2>Set pass ID</h2>
+<pre>set_pass_id(String $pass_id) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Call this function with the Pass ID. It will be santized
+and stored as a property. If it is empty it will return an error.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pass_id</h4>
+<code>String</code><p>Pass code as scanned from barcode (required)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>Boolean</code></div>
+</div></div>
+</div>
+<a id="method_set_pass_serial"></a><div class="element clickable method public method_set_pass_serial" data-toggle="collapse" data-target=".method_set_pass_serial .collapse">
+<h2>Set pass ID via serial</h2>
+<pre>set_pass_serial(String $serial, String $template) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Call this function with the params Pass Serial and Template Name.
+Using these it will query PassKit for the Pass ID and feed that
+into the set_pass_id function.</p>
+
+<p>set the Pass Serial and call set_pass_id()</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Validation and Retrieval</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serial</h4>
+<code>String</code><p>Pass serial (required)</p>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>String</code><p>Pass template (required)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>Boolean</code></div>
+</div></div>
+</div>
+<a id="method_template_update"></a><div class="element clickable method public method_template_update" data-toggle="collapse" data-target=".method_template_update .collapse">
+<h2>Update a template</h2>
+<pre>template_update(String $template, Array $fields, Boolean $push) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Update a template causing all issues passes for the template
+to also be updated. Can be used max every 10 minutes.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>String</code><p>Name of the template to update</p></div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>Array</code><p>The field names with value to update</p></div>
+<div class="subelement argument">
+<h4>$push</h4>
+<code>Boolean</code><p>Push to devices or not, default yes</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_error"></a><div class="element clickable method private method_error" data-toggle="collapse" data-target=".method_error .collapse">
+<h2>Output Error</h2>
+<pre>error(String $error, Array $backtrace) : false</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Error reporting function that will output a styled debug of the
+class variable "debug" is enabled.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Helper Functions</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code>String</code><p>Error Message to display</p></div>
+<div class="subelement argument">
+<h4>$backtrace</h4>
+<code>Array</code><p>The backtrace from point of error</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>false</code></div>
+</div></div>
+</div>
+<a id="method_object2array"></a><div class="element clickable method private method_object2array" data-toggle="collapse" data-target=".method_object2array .collapse">
+<h2>Object to Array conversion</h2>
+<pre>object2array(Object $object) : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Converts an object to an array for easier and consistant access</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Helper Functions</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code>Object</code><p>Object to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>Array</code></div>
+</div></div>
+</div>
+<a id="method_pk_query"></a><div class="element clickable method private method_pk_query" data-toggle="collapse" data-target=".method_pk_query .collapse">
+<h2>PassKit Query</h2>
+<pre>pk_query(String $path, Array $post) : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The cURL query function to PassKit. Handles all generic parts
+of this activity and can be called from action specific functions
+that provide specific requests.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>PassKit Communication</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>String</code><p>URL path to use for query</p></div>
+<div class="subelement argument">
+<h4>$post</h4>
+<code>Array</code><p>Additional post parameters to send with the query, optional</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Boolean</code>True on successful connection</div>
+</div></div>
+</div>
+<a id="method_sanitize"></a><div class="element clickable method private method_sanitize" data-toggle="collapse" data-target=".method_sanitize .collapse">
+<h2>Sanitize String</h2>
+<pre>sanitize(String $var) : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Strips non alpha-numerics from given string. / and . are also allowed.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Helper Functions</td>
+</tr>
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$var</h4>
+<code>String</code><p>Variable to sanitize</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>String</code>Sanitized variable</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_pk_error_result"> </a><div class="element clickable property public property_pk_error_result" data-toggle="collapse" data-target=".property_pk_error_result .collapse">
+<h2></h2>
+<pre>$pk_error_result : Object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_account"> </a><div class="element clickable property private property_account" data-toggle="collapse" data-target=".property_account .collapse">
+<h2></h2>
+<pre>$account : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_api_url"> </a><div class="element clickable property private property_api_url" data-toggle="collapse" data-target=".property_api_url .collapse">
+<h2></h2>
+<pre>$api_url : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse">
+<h2></h2>
+<pre>$debug : Boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_pass_details"> </a><div class="element clickable property private property_pass_details" data-toggle="collapse" data-target=".property_pass_details .collapse">
+<h2></h2>
+<pre>$pass_details : Array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_pass_id"> </a><div class="element clickable property private property_pass_id" data-toggle="collapse" data-target=".property_pass_id .collapse">
+<h2></h2>
+<pre>$pass_id : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_pk_result"> </a><div class="element clickable property private property_pk_result" data-toggle="collapse" data-target=".property_pk_result .collapse">
+<h2></h2>
+<pre>$pk_result : Object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Pass Interaction</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_secret"> </a><div class="element clickable property private property_secret" data-toggle="collapse" data-target=".property_secret .collapse">
+<h2></h2>
+<pre>$secret : String</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Thomas Smart &lt;dev*ThomasSmart*c0m&gt;</a></td>
+</tr>
+<tr>
+<th>category</th>
+<td>Initiate</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-01-19T12:31:44+08:00.<br></footer></div>
+</div>
+</body>
+</html>
