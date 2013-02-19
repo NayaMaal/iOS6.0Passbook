@@ -1,3 +1,7 @@
+Please also check the web reference @ http://developer.apple.com/library/ios/#documentation/PassKit/Reference/PassKit_WebService/WebService.html
+
+TODO: The ruby scripts need to be converted/re-written into Objective-C.
+
 #
 #  README
 #  Pass Server reference implementation
